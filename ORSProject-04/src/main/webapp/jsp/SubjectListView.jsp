@@ -1,3 +1,4 @@
+<%@page import="in.co.rays.proj4.bean.CourseBean"%>
 <%@page import="in.co.rays.proj4.controller.ORSView"%>
 <%@page import="in.co.rays.proj4.util.HTMLUtility"%>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -39,7 +40,7 @@
 				int index = ((pageNo - 1) * pageSize) + 1;
 				int nextPageSize = DataUtility.getInt(request.getAttribute("nextListSize").toString());
 
-				List<SubjectBean> courseList = (List<SubjectBean>) request.getAttribute("courseList");
+				List<CourseBean> courseList = (List<CourseBean>) request.getAttribute("courseList");
 				List<SubjectBean> subjectList = (List<SubjectBean>) request.getAttribute("subjectList");
 
 				List<SubjectBean> list = (List<SubjectBean>) ServletUtility.getList(request);
@@ -53,9 +54,9 @@
 
 			<table style="width: 100%">
 				<tr>
-					<td align="center"><label><b>Subject Name :</b></label> <%=HTMLUtility.getList("subjectId", String.valueOf(bean.getId()), subjectList)%>&emsp;
+<%-- 					<td align="center"><label><b>Subject Name :</b></label> <%=HTMLUtility.getList("subjectId", String.valueOf(bean.getId()), subjectList)%>&emsp;
 						<label><b>Course Name :</b></label> <%=HTMLUtility.getList("courseId", String.valueOf(bean.getCourseId()), courseList)%>&emsp;
-						<input type="submit" name="operation"
+ --%>			 				<input type="submit" name="operation"
 						value="<%=SubjectListCtl.OP_SEARCH%>">&nbsp; <input
 						type="submit" name="operation"
 						value="<%=SubjectListCtl.OP_RESET%>"></td>
@@ -122,6 +123,5 @@
 			%>
 		</form>
 	</div>
-	<%@ include file="Footer.jsp"%>
 </body>
 </html>

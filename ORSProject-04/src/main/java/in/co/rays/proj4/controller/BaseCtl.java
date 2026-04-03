@@ -150,7 +150,7 @@ public abstract class BaseCtl extends HttpServlet {
 
 		log.info("BaseCtl service() started");
 
-		preload(request, response);
+		preload(request,response);
 
 		String op = DataUtility.getString(request.getParameter("operation"));
 		log.debug("Operation received: " + op);

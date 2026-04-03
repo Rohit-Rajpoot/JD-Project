@@ -47,28 +47,28 @@ public class SubjectListCtl extends BaseCtl {
      * @throws ServletException 
      * @throws IOException 
      */
-    @Override
-    protected void preload(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        log.debug("SubjectListCtl preload() called");
-
-        SubjectModel subjectModel = new SubjectModel();
-        CourseModel courseModel = new CourseModel();
-
-        try {
-            List subjectList = subjectModel.list();
-            request.setAttribute("subjectList", subjectList);
-            log.info("Preloaded subject list, size=" + subjectList.size());
-
-            List courseList = courseModel.list();
-            request.setAttribute("courseList", courseList);
-            log.info("Preloaded course list, size=" + courseList.size());
-
-        } catch (ApplicationException e) {
-            log.error("ApplicationException in preload()", e);
-            ServletUtility.handleException(e, request, response, getView());
-            e.printStackTrace();
-        }
-    }
+//    @Override
+//    protected void preload(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+//        log.debug("SubjectListCtl preload() called");
+//
+//        SubjectModel subjectModel = new SubjectModel();
+//        CourseModel courseModel = new CourseModel();
+//
+//        try {
+//            List subjectList = subjectModel.list();
+//            request.setAttribute("subjectList", subjectList);
+//            log.info("Preloaded subject list, size=" + subjectList.size());
+//
+//            List courseList = courseModel.list();
+//            request.setAttribute("courseList", courseList);
+//            log.info("Preloaded course list, size=" + courseList.size());
+//
+//        } catch (ApplicationException e) {
+//            log.error("ApplicationException in preload()", e);
+//            ServletUtility.handleException(e, request, response, getView());
+//            e.printStackTrace();
+//        }
+//    }
 
     /**
      * Populates a {@link SubjectBean} from request parameters for use in search

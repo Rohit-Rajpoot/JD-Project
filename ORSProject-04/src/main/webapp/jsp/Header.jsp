@@ -41,8 +41,7 @@
 	<b>|</b>
 	<a href="<%=ORSView.GET_MARKSHEET_CTL%>"><b>Get Marksheet</b></a>
 	<b>|</b>
-	<a href="<%=ORSView.MARKSHEET_MERIT_LIST_CTL%>"><b>Marksheet
-			Merit List</b></a>
+	<a href="<%=ORSView.MARKSHEET_MERIT_LIST_CTL%>"><b>Marksheet Merit List</b></a>
 	<b>|</b>
 	<a href="<%=ORSView.USER_CTL%>"><b>Add User</b></a>
 	<b>|</b>
@@ -80,14 +79,39 @@
 	<b>|</b>
 	<a href="<%=ORSView.FACULTY_LIST_CTL%>"><b>Faculty List</b></a>
 	<b>|</b>
+	<a href="<%=ORSView.DEVICE_CTL%>"><b>Add Device</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.DEVICE_LIST_CTL%>"><b>Device List</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.CERTIFICATE_CTL%>"><b>Add Certificate</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.CERTIFICATE_LIST_CTL%>"><b>Certificate List</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.CONTACT_CTL%>"><b>Add Contact</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.CONTACT_LIST_CTL%>"><b>Contact List</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.PRIORITY_CTL%>"><b>Add Priority</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.PRIORITY_LIST_CTL%>"><b>Priority List</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.REVIEW_CTL%>"><b>Add Review</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.REVIEW_LIST_CTL%>"><b>Review List</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.TIMESLOT_CTL%>"><b>Add TimeSlot</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.TIMESLOT_LIST_CTL%>"><b>TimeSlot List</b></a>
+	<b>|</b>
+	
 	<a href="<%=ORSView.JAVA_DOC%>" target="blank"><b>Java Doc</b></a>
 	<b>|</b>
 	<a href="<%=ORSView.LOGIN_CTL + "?operation=Logout"%>"><b>Logout</b></a>
-	<b>|</b>
+	<%-- <b>|</b>
 	<a href="<%=ORSView.PATIENT_CTL%>"><b>Patient Apointment</b></a>
 	<b>|</b>
 	<a href="<%=ORSView.PATIENT_LIST_CTL%>"><b>Apointment List</b></a>
-	<%
+ --%>	<%
 		} else if (user.getRoleId() == RoleBean.STUDENT) {
 	%>
 	<a href="<%=ORSView.STUDENT_CTL%>"><b>Add Student</b></a>
@@ -119,5 +143,7 @@
 	%>
 
 	<hr>
+	
+	<%@include file = "Footer.jsp" %>
 </body>
 </html>

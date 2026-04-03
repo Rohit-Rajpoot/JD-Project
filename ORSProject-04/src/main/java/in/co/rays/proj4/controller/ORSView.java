@@ -70,6 +70,13 @@ public interface ORSView {
 
 	public String STUDENT_LIST_VIEW = PAGE_FOLDER + "/StudentListView.jsp";
 	public String STUDENT_LIST_CTL = APP_CONTEXT + "/ctl/StudentListCtl";
+	
+	public String DEVICE_VIEW = PAGE_FOLDER + "/DeviceView.jsp";
+	public String DEVICE_CTL = APP_CONTEXT + "/ctl/DeviceCtl";
+
+	public String DEVICE_LIST_VIEW = PAGE_FOLDER + "/DeviceListView.jsp";
+	public String DEVICE_LIST_CTL = APP_CONTEXT + "/ctl/DeviceListCtl";
+
 
 	public String MARKSHEET_VIEW = PAGE_FOLDER + "/MarksheetView.jsp";
 	public String MARKSHEET_CTL = APP_CONTEXT + "/ctl/MarksheetCtl";
@@ -111,6 +118,40 @@ public interface ORSView {
 
 	public String PATIENT_LIST_VIEW = PAGE_FOLDER + "/PatientListView.jsp";
 	public String PATIENT_LIST_CTL = APP_CONTEXT + "/ctl/PatientListCtl";
+	
+	public String CERTIFICATE_VIEW = PAGE_FOLDER + "/CertificateView.jsp";
+	public String CERTIFICATE_CTL = APP_CONTEXT + "/ctl/CertificateCtl";
+
+	public String CERTIFICATE_LIST_VIEW = PAGE_FOLDER + "/CertificateListView.jsp";
+	public String CERTIFICATE_LIST_CTL = APP_CONTEXT + "/ctl/CertificateListCtl";
+	
+	public String CONTACT_VIEW = PAGE_FOLDER + "/ContactView.jsp";
+	public String CONTACT_CTL = APP_CONTEXT + "/ctl/ContactCtl";
+
+	public String CONTACT_LIST_VIEW = PAGE_FOLDER + "/ContactListView.jsp";
+	public String CONTACT_LIST_CTL = APP_CONTEXT + "/ctl/ContactListCtl";
+	
+	public String PRIORITY_VIEW = PAGE_FOLDER + "/PriorityView.jsp";
+	public String PRIORITY_CTL = APP_CONTEXT + "/ctl/PriorityCtl";
+
+	public String PRIORITY_LIST_VIEW = PAGE_FOLDER + "/PriorityListView.jsp";
+	public String PRIORITY_LIST_CTL = APP_CONTEXT + "/ctl/PriorityListCtl";
+	
+	public String TIMESLOT_VIEW = PAGE_FOLDER + "/TimeSlotView.jsp";
+	public String TIMESLOT_CTL = APP_CONTEXT + "/ctl/TimeSlotCtl";
+
+	public String TIMESLOT_LIST_VIEW = PAGE_FOLDER + "/TimeSlotListView.jsp";
+	public String TIMESLOT_LIST_CTL = APP_CONTEXT + "/ctl/TimeSlotListCtl";
+	
+	public String REVIEW_VIEW = PAGE_FOLDER + "/ReviewView.jsp";
+	public String REVIEW_CTL = APP_CONTEXT + "/ctl/ReviewCtl";
+
+	public String REVIEW_LIST_VIEW = PAGE_FOLDER + "/ReviewListView.jsp";
+	public String REVIEW_LIST_CTL = APP_CONTEXT + "/ctl/ReviewListCtl";
+	
+	
+	
+	
 
 	
 

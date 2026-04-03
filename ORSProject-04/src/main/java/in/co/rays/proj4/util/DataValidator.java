@@ -269,6 +269,18 @@ public class DataValidator {
             return false;
         }
     }
+    
+    public static boolean isValidDateRange(Date startDate, Date endDate) {
+        if (startDate == null || endDate == null) {
+            throw new IllegalArgumentException("Dates cannot be null");
+        }
+
+        if (endDate.before(startDate)) {
+            return false;
+        }
+
+        return true;
+    }
 
     /**
      * Test runner for all validation methods.

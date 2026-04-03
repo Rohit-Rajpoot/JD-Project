@@ -14,13 +14,12 @@ import in.co.rays.proj4.exception.DuplicateRecordException;
 import in.co.rays.proj4.util.JDBCDataSource;
 
 /**
- * SubjectModel provides CRUD and search operations for SubjectBean,
- * interacting with the {@code st_subject} table via JDBC.
+ * SubjectModel provides CRUD and search operations for SubjectBean, interacting
+ * with the {@code st_subject} table via JDBC.
  *
  * <p>
  * This class throws project-specific exceptions (ApplicationException,
- * DatabaseException, DuplicateRecordException) to indicate failure
- * conditions.
+ * DatabaseException, DuplicateRecordException) to indicate failure conditions.
  * </p>
  *
  * @author Rohit Rajpoot
@@ -58,7 +57,8 @@ public class SubjectModel {
 	 *
 	 * @param bean SubjectBean containing subject data to add
 	 * @return primary key of newly inserted subject
-	 * @throws ApplicationException     if any SQL exception occurs while adding subject
+	 * @throws ApplicationException     if any SQL exception occurs while adding
+	 *                                  subject
 	 * @throws DuplicateRecordException if a subject with same name already exists
 	 */
 	public long add(SubjectBean bean) throws ApplicationException, DuplicateRecordException {
@@ -81,9 +81,9 @@ public class SubjectModel {
 			PreparedStatement pstmt = conn.prepareStatement("insert into st_subject values(?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			pstmt.setInt(1, pk);
 			pstmt.setString(2, bean.getName());
-			pstmt.setLong(3, bean.getCourseId());
-			pstmt.setString(4, bean.getCourseName());
-			pstmt.setString(5, bean.getDescription());
+			pstmt.setString(3, bean.getDescription());
+			pstmt.setLong(4, bean.getCourseId());
+			pstmt.setString(5, bean.getCourseName());
 			pstmt.setString(6, bean.getCreatedBy());
 			pstmt.setString(7, bean.getModifiedBy());
 			pstmt.setTimestamp(8, bean.getCreatedDatetime());
@@ -121,12 +121,12 @@ public class SubjectModel {
 
 			conn.setAutoCommit(false); // Begin transaction
 			PreparedStatement pstmt = conn.prepareStatement(
-					"update st_subject set name = ?, course_id = ?, course_name = ?, description = ?, created_by = ?, modified_by = ?, created_datetime = ?, modified_datetime = ? where id = ?");
+					"update st_subject set name = ?, description = ?, course_id = ?, course_name = ?, created_by = ?, modified_by = ?, created_datetime = ?, modified_datetime = ? where id = ?");
 			pstmt.setString(1, bean.getName());
-			pstmt.setLong(2, bean.getCourseId());
-			pstmt.setString(3, bean.getCourseName());
-			pstmt.setString(4, bean.getDescription());
-			pstmt.setString(5, bean.getCreatedBy());
+			pstmt.setString(2, bean.getDescription());
+			pstmt.setLong(3, bean.getCourseId());
+			pstmt.setString(4, bean.getCourseName());
+		    pstmt.setString(5, bean.getCreatedBy());
 			pstmt.setString(6, bean.getModifiedBy());
 			pstmt.setTimestamp(7, bean.getCreatedDatetime());
 			pstmt.setTimestamp(8, bean.getModifiedDatetime());
@@ -194,10 +194,10 @@ public class SubjectModel {
 				bean = new SubjectBean();
 				bean.setId(rs.getLong(1));
 				bean.setName(rs.getString(2));
-				bean.setCourseId(rs.getLong(3));
-				bean.setCourseName(rs.getString(4));
-				bean.setDescription(rs.getString(5));
-				bean.setCreatedBy(rs.getString(6));
+				bean.setDescription(rs.getString(3));
+				bean.setCourseId(rs.getLong(4));
+				bean.setCourseName(rs.getString(5));
+			    bean.setCreatedBy(rs.getString(6));
 				bean.setModifiedBy(rs.getString(7));
 				bean.setCreatedDatetime(rs.getTimestamp(8));
 				bean.setModifiedDatetime(rs.getTimestamp(9));
@@ -232,10 +232,10 @@ public class SubjectModel {
 				bean = new SubjectBean();
 				bean.setId(rs.getLong(1));
 				bean.setName(rs.getString(2));
-				bean.setCourseId(rs.getLong(3));
-				bean.setCourseName(rs.getString(4));
-				bean.setDescription(rs.getString(5));
-				bean.setCreatedBy(rs.getString(6));
+				bean.setDescription(rs.getString(3));
+				bean.setCourseId(rs.getLong(4));
+				bean.setCourseName(rs.getString(5));
+			    bean.setCreatedBy(rs.getString(6));
 				bean.setModifiedBy(rs.getString(7));
 				bean.setCreatedDatetime(rs.getTimestamp(8));
 				bean.setModifiedDatetime(rs.getTimestamp(9));
@@ -264,7 +264,8 @@ public class SubjectModel {
 	 * Searches subjects based on provided filter bean and supports pagination.
 	 *
 	 * @param bean     SubjectBean filter (null means no filter)
-	 * @param pageNo   page number (1-based). If pageSize &gt; 0, pageNo is used to compute offset.
+	 * @param pageNo   page number (1-based). If pageSize &gt; 0, pageNo is used to
+	 *                 compute offset.
 	 * @param pageSize number of records per page. If 0, returns all matching rows.
 	 * @return List of SubjectBean matching criteria
 	 * @throws ApplicationException if a SQL error occurs during search
@@ -306,10 +307,10 @@ public class SubjectModel {
 				bean = new SubjectBean();
 				bean.setId(rs.getLong(1));
 				bean.setName(rs.getString(2));
-				bean.setCourseId(rs.getLong(3));
-				bean.setCourseName(rs.getString(4));
-				bean.setDescription(rs.getString(5));
-				bean.setCreatedBy(rs.getString(6));
+				bean.setDescription(rs.getString(3));
+				bean.setCourseId(rs.getLong(4));
+				bean.setCourseName(rs.getString(5));
+			    bean.setCreatedBy(rs.getString(6));
 				bean.setModifiedBy(rs.getString(7));
 				bean.setCreatedDatetime(rs.getTimestamp(8));
 				bean.setModifiedDatetime(rs.getTimestamp(9));
@@ -318,6 +319,7 @@ public class SubjectModel {
 			rs.close();
 			pstmt.close();
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new ApplicationException("Exception : Exception in search Subject");
 		} finally {
 			JDBCDataSource.closeConnection(conn);

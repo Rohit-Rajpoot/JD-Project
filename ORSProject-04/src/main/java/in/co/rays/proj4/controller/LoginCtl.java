@@ -191,10 +191,10 @@ public class LoginCtl extends BaseCtl {
                     return;
 
                 } else {
-                    log.warn("Authentication failed for login: " + bean.getLogin());
                     bean = (UserBean) populateBean(request);
                     ServletUtility.setBean(bean, request);
                     ServletUtility.setErrorMessage("Invalid LoginId And Password", request);
+                    log.warn("Authentication failed for login: " + bean.getLogin());
                 }
 
             } catch (ApplicationException e) {

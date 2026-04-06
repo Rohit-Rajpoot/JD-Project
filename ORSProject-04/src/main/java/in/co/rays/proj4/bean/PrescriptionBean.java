@@ -1,64 +1,46 @@
 package in.co.rays.proj4.bean;
 
-import java.util.Date;
-
-public class PrescriptionBean extends BaseBean{
-
+public class PrescriptionBean  extends BaseBean{
+	
+	private String code;
 	private String name;
-
-	private Date date;
-
-	private Integer capacity;
-
-	private String disease;
-
+	private String  medicines;
+	
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public Date getDateOfVisit() {
-		return date;
+	public String getMedicines() {
+		return medicines;
 	}
-
-	public void setDateOfVisit(Date dateOfVisit) {
-		this.date = dateOfVisit;
+	public void setMedicines(String medicines) {
+		this.medicines = medicines;
 	}
-
-	public Integer getMobile() {
-		return capacity;
+	public String getStatus() {
+		return status;
 	}
-
-	public void setMobile(Integer capacity) {
-		this.capacity = capacity;
+	public void setStatus(String status) {
+		this.status = status;
 	}
-
-	public String getDisease() {
-		return disease;
-	}
-
-	public void setDisease(String disease) {
-		this.disease = disease;
-	}
-
-	@Override
-	public String getValue() {
-		return disease;
-	}
-
-	@Override
-	public String toString() {
-		return "PatientBean [name=" + name + ", date=" + date + ", capacity=" + capacity + ", disease="
-				+ disease + "]";
-	}
-
+	private String status;
 	@Override
 	public String getKey() {
-		return disease;
+		// TODO Auto-generated method stub
+		return null;
 	}
-
+	@Override
+	public String getValue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 
 }

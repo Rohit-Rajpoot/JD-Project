@@ -18,10 +18,13 @@ public class RoleBean extends BaseBean {
     public static final int STUDENT = 2;
 
     /** Constant representing Faculty role. */
-    public static final int FACULTY = 3;
+    public static final int COLLEGE = 3;
 
     /** Constant representing Kiosk role. */
     public static final int KIOSK = 4;
+    
+    /** Constant representing Faculty role. */
+    public static final int FACULTY = 5;
 
     /** Name of the role (e.g., "Admin", "Student"). */
     private String name;

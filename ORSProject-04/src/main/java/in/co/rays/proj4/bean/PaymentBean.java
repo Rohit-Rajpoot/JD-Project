@@ -1,43 +1,50 @@
 package in.co.rays.proj4.bean;
 
+import java.util.Date;
+
+/**
+ * this is payment bean
+ * @author Rohit Rajpoot
+ *
+ */
 public class PaymentBean extends BaseBean {
 
-	private long paymentId;
-	private long bookingId;
-	private long amount;
-	private String paymentMode;
+	private String transactionId;
+	private String payerName;
+	private int amount;
+	private Date paymentDate;
 	private String paymentStatus;
 
-	public long getPaymentId() {
-		return paymentId;
+	public String getTransactionId() {
+		return transactionId;
 	}
 
-	public void setPaymentId(long paymentId) {
-		this.paymentId = paymentId;
+	public void setTransactionId(String transactionId) {
+		this.transactionId = transactionId;
 	}
 
-	public long getBookingId() {
-		return bookingId;
+	public String getPayerName() {
+		return payerName;
 	}
 
-	public void setBookingId(long bookingId) {
-		this.bookingId = bookingId;
+	public void setPayerName(String payerName) {
+		this.payerName = payerName;
 	}
 
-	public long getAmount() {
+	public int getAmount() {
 		return amount;
 	}
 
-	public void setAmount(long amount) {
+	public void setAmount(int amount) {
 		this.amount = amount;
 	}
 
-	public String getPaymentMode() {
-		return paymentMode;
+	public Date getPaymentDate() {
+		return paymentDate;
 	}
 
-	public void setPaymentMode(String paymentMode) {
-		this.paymentMode = paymentMode;
+	public void setPaymentDate(Date paymentDate) {
+		this.paymentDate = paymentDate;
 	}
 
 	public String getPaymentStatus() {

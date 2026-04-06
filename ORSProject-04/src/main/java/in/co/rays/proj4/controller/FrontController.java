@@ -80,7 +80,7 @@ public class FrontController implements Filter {
             return;
         } else {
             log.debug("User session valid. Proceeding with filter chain.");
-            chain.doFilter(req, resp);
+            chain.doFilter(request, response);
         }
     }
 

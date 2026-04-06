@@ -107,13 +107,32 @@
 	<a href="<%=ORSView.JAVA_DOC%>" target="blank"><b>Java Doc</b></a>
 	<b>|</b>
 	<a href="<%=ORSView.LOGIN_CTL + "?operation=Logout"%>"><b>Logout</b></a>
-	<%-- <b>|</b>
-	<a href="<%=ORSView.PATIENT_CTL%>"><b>Patient Apointment</b></a>
 	<b>|</b>
-	<a href="<%=ORSView.PATIENT_LIST_CTL%>"><b>Apointment List</b></a>
- --%>	<%
+	<a href="<%=ORSView.PAYMENT_CTL%>"><b>Add Payment</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.PAYMENT_LIST_CTL%>"><b>Payment List</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.ART_CTL%>"><b>Add Art</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.ART_LIST_CTL%>"><b>Art List</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.BUDGET_CTL%>"><b>Add Budget</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.BUDGET_LIST_CTL%>"><b>Budget List</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.INTERNET_CTL%>"><b>Add Internet</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.INTERNET_LIST_CTL%>"><b>Internet List</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.PRESCRIPTION_CTL%>"><b>Add Prescription</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.PRESCRIPTION_LIST_CTL%>"><b>Prescription List</b></a>
+	<b>|</b>
+	
+	<%
 		} else if (user.getRoleId() == RoleBean.STUDENT) {
 	%>
+	
 	<a href="<%=ORSView.STUDENT_CTL%>"><b>Add Student</b></a>
 	<b>|</b>
 	<a href="<%=ORSView.STUDENT_LIST_CTL%>"><b>Student List</b></a>

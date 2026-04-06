@@ -71,7 +71,7 @@ public abstract class BaseCtl extends HttpServlet {
 	 * @throws ServletException 
 	 * @throws IOException 
 	 */
-	protected void preload(HttpServletRequest request, HttpServletResponse responses) throws IOException, ServletException {
+	protected void preload(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		log.debug("BaseCtl preload() called");
 	}
 

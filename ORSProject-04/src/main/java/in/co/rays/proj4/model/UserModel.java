@@ -387,6 +387,8 @@ public class UserModel {
 			pageNo = (pageNo - 1) * pageSize;
 			sql.append(" limit " + pageNo + ", " + pageSize);
 		}
+		
+		System.out.println("sql ==>> " + sql.toString());
 
 		try {
 			conn = JDBCDataSource.getConnection();

@@ -149,6 +149,39 @@ public interface ORSView {
 	public String REVIEW_LIST_VIEW = PAGE_FOLDER + "/ReviewListView.jsp";
 	public String REVIEW_LIST_CTL = APP_CONTEXT + "/ctl/ReviewListCtl";
 	
+	public String ART_VIEW = PAGE_FOLDER + "/ArtView.jsp";
+	public String ART_CTL = APP_CONTEXT + "/ctl/ArtCtl";
+
+	public String ART_LIST_VIEW = PAGE_FOLDER + "/ArtListView.jsp";
+	public String ART_LIST_CTL = APP_CONTEXT + "/ctl/ArtListCtl";
+	
+	public String BUDGET_VIEW = PAGE_FOLDER + "/BudgetView.jsp";
+	public String BUDGET_CTL = APP_CONTEXT + "/ctl/BudgetCtl";
+
+	public String BUDGET_LIST_VIEW = PAGE_FOLDER + "/BudgetListView.jsp";
+	public String BUDGET_LIST_CTL = APP_CONTEXT + "/ctl/BudgetListCtl";
+	
+	public String INTERNET_VIEW = PAGE_FOLDER + "/InternetView.jsp";
+	public String INTERNET_CTL = APP_CONTEXT + "/ctl/InternetCtl";
+
+	public String INTERNET_LIST_VIEW = PAGE_FOLDER + "/InternetListView.jsp";
+	public String INTERNET_LIST_CTL = APP_CONTEXT + "/ctl/InternetListCtl";
+	
+	public String PAYMENT_VIEW = PAGE_FOLDER + "/PaymentView.jsp";
+	public String PAYMENT_CTL = APP_CONTEXT + "/ctl/PaymentCtl";
+
+	public String PAYMENT_LIST_VIEW = PAGE_FOLDER + "/PaymentListView.jsp";
+	public String PAYMENT_LIST_CTL = APP_CONTEXT + "/ctl/PaymentListCtl";
+	
+	public String PRESCRIPTION_VIEW = PAGE_FOLDER + "/PrescriptionView.jsp";
+	public String PRESCRIPTION_CTL = APP_CONTEXT + "/ctl/PrescriptionCtl";
+
+	public String PRESCRIPTION_LIST_VIEW = PAGE_FOLDER + "/PrescriptionListView.jsp";
+	public String PRESCRIPTION_LIST_CTL = APP_CONTEXT + "/ctl/PrescriptionListCtl";
+	
+	
+	
+	
 	
 	
 	

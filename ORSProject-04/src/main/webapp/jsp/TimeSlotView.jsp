@@ -66,19 +66,19 @@
 
 				<tr>
 					<th align="left">Start Time<span style="color: red">*</span></th>
-					<td><input type="date" name="startTime"
+					<td><input type="text" id="udate" name="startTime"
 						placeholder="Enter Start Time"
 						style="width:165px"
-						value="<%=DataUtility.getStringData(bean.getStartTime())%>"></td>
+						value="<%=DataUtility.getDateString(bean.getStartTime())%>"></td>
 					<td style="position: fixed;"><font color="red"> <%=ServletUtility.getErrorMessage("startTime", request)%></font></td>
 				</tr>
 				
 				<tr>
 					<th align="left">End Time<span style="color: red">*</span></th>
-					<td><input type="date" name="endTime"
+					<td><input type="text" id="udate" name="endTime"
 						placeholder="Enter End Time"
 						style="width:165px"
-						value="<%=DataUtility.getStringData(bean.getEndTime())%>"></td>
+						value="<%=DataUtility.getDateString(bean.getEndTime())%>"></td>
 
 					<td style="position: fixed;"><font color="red"> <%=ServletUtility.getErrorMessage("endTime", request)%>
 					</font></td>

@@ -66,13 +66,13 @@
                 </tr>
                 
                 
-<tr>
+               <%--  <tr>
 					<th align="left">Name<span style="color: red">*</span></th>
 					<td><%=HTMLUtility.getList("name", String.valueOf(bean.getName()) ,artList)%></td>
 					<td style="position: fixed;"><font color="red"> <%=ServletUtility.getErrorMessage("name", request)%></font></td>
-				</tr>
+				</tr> --%>
             
-           <%--       <tr>
+                  <tr>
                     <th align="left">Name<span style="color: red">*</span></th>
                     <td><input type="text" name="name" placeholder="Enter Name" value="<%=DataUtility.getStringData(bean.getName())%>"></td>
                     <td style="position: fixed;">
@@ -80,11 +80,9 @@
                             <%=ServletUtility.getErrorMessage("name", request)%>                      </font>
                     </td>
                 </tr>
-           --%>  
 
               <tr>
-					<th align="left">Date
-					<span style="color: red">*</span></th>
+					<th align="left">Date <span style="color: red">*</span></th>
 					<td><input type="text" id="udate" name="date" placeholder="enter date" value="<%=DataUtility.getDateString(bean.getDate())%>" style="width: 98%"></td>
 					<td style="position: fixed;"><font color="red"> <%=ServletUtility.getErrorMessage("date", request)%></font></td>
 				</tr>
@@ -93,10 +91,11 @@
                 <tr>
             <th align="left">Price<span style="color: red">*</span></th>
             <% HashMap<String, String> map = new HashMap<String, String>();
-            map.put("2002","2002");
-            map.put("2003","2003");
-            map.put("2004","2004");
-            map.put("2005","2005");
+            map.put("1000","1000");
+            map.put("2000","2000");
+            map.put("3000","3000");
+            map.put("4000","4000");
+            map.put("5000","5000");
             String htmlutility= HTMLUtility.getList("price", bean.getPrice(), map);
       
             

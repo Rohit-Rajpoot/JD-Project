@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import in.co.rays.proj4.bean.ArtBean;
 import in.co.rays.proj4.bean.PrescriptionBean;
 import in.co.rays.proj4.exception.ApplicationException;
 import in.co.rays.proj4.exception.DatabaseException;
@@ -121,6 +122,11 @@ public class PrescriptionModel {
 	
 	public void update(PrescriptionBean bean) throws SQLException, ApplicationException, DuplicateRecordException {
 		Connection conn=null;
+		
+		PrescriptionBean duplicate = findByName(bean.getName()); // Check if updated Role
+		  if (duplicate != null && duplicate.getId() !=bean.getId()) { 
+			  throw new DuplicateRecordException("Name already exists");
+			  }
 	
 		 
 		try {
@@ -130,7 +136,7 @@ public class PrescriptionModel {
 			PreparedStatement pstmt=conn.prepareStatement("update st_prescription set code=? , name=?, medicines=?,status=?  ,created_by=?,modified_by=?,created_datetime=?,modified_datetime=? where id=?");
 			pstmt.setString(1, bean.getCode());
 			pstmt.setString(2, bean.getName());
-			pstmt.setString(2, bean.getMedicines());
+			pstmt.setString(3, bean.getMedicines());
 	
 			pstmt.setString(4, bean.getStatus());
 			pstmt.setString(5, bean.getCreatedBy());
@@ -144,18 +150,16 @@ public class PrescriptionModel {
 			pstmt.close();
 		}
 		catch(Exception e) {
+			e.printStackTrace();
 			try {
 			conn.rollback();
 			}
 			catch(Exception ex) {
 				throw new ApplicationException("Exception : Delete rollback exception " + ex.getMessage());
-
-			}
+				}
 			
 			throw new ApplicationException("Exception in updating Role ");
-
-
-		}
+			}
 		
 		finally {
 			JDBCDataSource.closeConnection(conn);

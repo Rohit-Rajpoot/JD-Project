@@ -4,7 +4,7 @@ public class InternetBean  extends BaseBean{
 	
 	private String name;
 	private int price;
-	private int limit;
+	private int range;
 	
 	public String getName() {
 		return name;
@@ -18,12 +18,13 @@ public class InternetBean  extends BaseBean{
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public int getLimit() {
-		return limit;
+	public int getRange() {
+		return range;
 	}
-	public void setLimit(int limit) {
-		this.limit = limit;
+	public void setRange(int range) {
+		this.range = range;
 	}
+	
 	@Override
 	public String getKey() {
 		// TODO Auto-generated method stub

@@ -8,12 +8,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import in.co.rays.proj4.bean.ArtBean;
 import in.co.rays.proj4.bean.BaseBean;
 import in.co.rays.proj4.bean.InternetBean;
 import in.co.rays.proj4.controller.InternetCtl;
 import in.co.rays.proj4.exception.ApplicationException;
 import in.co.rays.proj4.exception.DuplicateRecordException;
-
+import in.co.rays.proj4.model.ArtModel;
 import in.co.rays.proj4.model.InternetModel;
 import in.co.rays.proj4.util.DataUtility;
 import in.co.rays.proj4.util.DataValidator;
@@ -41,8 +42,8 @@ public class InternetCtl extends BaseCtl {
 			pass = false;
 		}
 
-		if (DataValidator.isNull(request.getParameter("limit"))) {
-			request.setAttribute("limit", PropertyReader.getValue("error.require", "limit"));
+		if (DataValidator.isNull(request.getParameter("range"))) {
+			request.setAttribute("range", PropertyReader.getValue("error.require", "range"));
 			pass = false;
 		}
 		
@@ -57,7 +58,7 @@ public class InternetCtl extends BaseCtl {
 		bean.setId(DataUtility.getLong(request.getParameter("id")));
 		bean.setName(DataUtility.getString(request.getParameter("name")));
 		bean.setPrice(DataUtility.getInt(request.getParameter("price")));
-		bean.setLimit(DataUtility.getInt(request.getParameter("limit")));
+		bean.setRange(DataUtility.getInt(request.getParameter("range")));
 		
 
 		populateDTO(bean, request);
@@ -109,12 +110,12 @@ public class InternetCtl extends BaseCtl {
 				ServletUtility.setErrorMessage("Role already exists", request);
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				   ServletUtility.handleException(e, request, response, getView());
+				 ServletUtility.handleException(e, request, response, getView());
 				return;
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-		}else if (OP_UPDATE.equalsIgnoreCase(op)) {
+		} else if (OP_UPDATE.equalsIgnoreCase(op)) {
 
 			InternetBean bean = (InternetBean) populateBean(request);
 
@@ -126,10 +127,10 @@ public class InternetCtl extends BaseCtl {
 				ServletUtility.setSuccessMessage("Data is successfully updated", request);
 			} catch (DuplicateRecordException e) {
 				ServletUtility.setBean(bean, request);
-				ServletUtility.setErrorMessage("Role already exists", request);
+				ServletUtility.setErrorMessage("Name already exists", request);
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				   ServletUtility.handleException(e, request, response, getView());
+				 ServletUtility.handleException(e, request, response, getView());
 				return;
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -140,13 +141,14 @@ public class InternetCtl extends BaseCtl {
 			ServletUtility.redirect(ORSView.INTERNET_LIST_CTL, request, response);
 			return;
 		}
-		
-		 else if (OP_RESET.equalsIgnoreCase(op)) {
-				ServletUtility.redirect(ORSView.INTERNET_CTL, request, response);
-				return;
-			}
+
+		else if (OP_RESET.equalsIgnoreCase(op)) {
+			ServletUtility.redirect(ORSView.INTERNET_CTL, request, response);
+			return;
+		}
 		ServletUtility.forward(getView(), request, response);
 	}
+
 
 	@Override
 	protected String getView() {

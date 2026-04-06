@@ -67,11 +67,11 @@
                 </tr>
  
                 <tr>
-                    <th align="left">Limit<span style="color: red">*</span></th>
-                    <td><input type="text" name="limit" placeholder="Enter limit"  value="<%= (bean.getLimit() == 0) ? "" : bean.getLimit()%>"></td>
+                    <th align="left">Range<span style="color: red">*</span></th>
+                    <td><input type="text" name="range" placeholder="Enter limit"  value="<%= (bean.getRange() == 0) ? "" : bean.getRange()%>"></td>
                     <td style="position: fixed;">
                         <font color="red">
-                            <%=ServletUtility.getErrorMessage("content", request)%>
+                            <%=ServletUtility.getErrorMessage("range", request)%>
                         </font>
                     </td>
                 </tr>

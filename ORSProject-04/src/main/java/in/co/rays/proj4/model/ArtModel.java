@@ -236,9 +236,9 @@ public class ArtModel {
 		
 	}
 	//find by filter without pagination ***************-----------------------------------
-	public List search(ArtBean bean) {
+	public List list(ArtBean bean) throws ApplicationException {
 		
-		return search(bean);
+		return search(bean,0,0);
 	}
 	
 	

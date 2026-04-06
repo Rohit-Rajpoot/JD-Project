@@ -8,11 +8,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import in.co.rays.proj4.bean.ArtBean;
 import in.co.rays.proj4.bean.BaseBean;
 import in.co.rays.proj4.bean.PrescriptionBean;
 
 import in.co.rays.proj4.exception.ApplicationException;
 import in.co.rays.proj4.exception.DuplicateRecordException;
+import in.co.rays.proj4.model.ArtModel;
 import in.co.rays.proj4.model.PrescriptionModel;
 import in.co.rays.proj4.util.DataUtility;
 import in.co.rays.proj4.util.DataValidator;
@@ -29,9 +31,6 @@ public class PrescriptionCtl extends BaseCtl {
 
 		if (DataValidator.isNull(request.getParameter("code"))) {
 			request.setAttribute("code", PropertyReader.getValue("error.require", "code"));
-			pass = false;
-		} else if (!DataValidator.isName(request.getParameter("code"))) {
-			request.setAttribute("code", "Invalid code");
 			pass = false;
 		}
 
@@ -109,10 +108,10 @@ public class PrescriptionCtl extends BaseCtl {
 				ServletUtility.setSuccessMessage("Data is successfully saved", request);
 			} catch (DuplicateRecordException e) {
 				ServletUtility.setBean(bean, request);
-				ServletUtility.setErrorMessage("Role already exists", request);
+				ServletUtility.setErrorMessage("Name already exists", request);
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				   ServletUtility.handleException(e, request, response, getView());
+				 ServletUtility.handleException(e, request, response, getView());
 				return;
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -129,10 +128,10 @@ public class PrescriptionCtl extends BaseCtl {
 				ServletUtility.setSuccessMessage("Data is successfully updated", request);
 			} catch (DuplicateRecordException e) {
 				ServletUtility.setBean(bean, request);
-				ServletUtility.setErrorMessage("already exists", request);
+				ServletUtility.setErrorMessage("Role already exists", request);
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				   ServletUtility.handleException(e, request, response, getView());
+				 ServletUtility.handleException(e, request, response, getView());
 				return;
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -150,6 +149,7 @@ public class PrescriptionCtl extends BaseCtl {
 		}
 		ServletUtility.forward(getView(), request, response);
 	}
+
 
 	@Override
 	protected String getView() {

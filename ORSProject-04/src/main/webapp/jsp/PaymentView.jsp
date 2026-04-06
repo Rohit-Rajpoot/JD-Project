@@ -57,7 +57,7 @@
 
             <table>
                 <tr>
-                    <th align="left">Id<span style="color: red">*</span></th>
+                    <th align="left">Transaction Id :<span style="color: red">*</span></th>
                     <td><input type="text" name="transactionId" placeholder="Enter transactionId " value="<%=DataUtility.getStringData(bean.getTransactionId())%>"></td>
                     <td style="position: fixed;">
                         <font color="red">
@@ -67,7 +67,7 @@
                 </tr>
                 
 <tr>
-                    <th align="left">Name<span style="color: red">*</span></th>
+                    <th align="left">Name :<span style="color: red">*</span></th>
                     <td><input type="text" name="payerName" placeholder="Enter payerName" value="<%=DataUtility.getStringData(bean.getPayerName())%>"></td>
                     <td style="position: fixed;">
                         <font color="red">
@@ -77,7 +77,7 @@
                 </tr>
                 
                 <tr>
-                    <th align="left">Amount<span style="color: red">*</span></th>
+                    <th align="left">Amount :<span style="color: red">*</span></th>
                     <td><input type="text" name="amount" placeholder="Enter " value="<%= (bean.getAmount() == 0) ? "" : bean.getAmount()%>"></td>
                     <td style="position: fixed;">
                         <font color="red">
@@ -98,15 +98,14 @@
            --%>  
 
               <tr>
-					<th align="left">Payment Date
-					<span style="color: red">*</span></th>
+					<th align="left">Payment Date :<span style="color: red">*</span></th>
 					<td><input type="text" id="udate" name="paymentDate" placeholder="enter date" value="<%=DataUtility.getDateString(bean.getPaymentDate())%>" style="width: 98%"></td>
 					<td style="position: fixed;"><font color="red"> <%=ServletUtility.getErrorMessage("paymentDate", request)%></font></td>
 				</tr>
 				
                 
                 <tr>
-            <th align="left">Status<span style="color: red">*</span></th>
+            <th align="left">Status :<span style="color: red">*</span></th>
             <% HashMap<String, String> map = new HashMap<String, String>();
             map.put("online","online");
             map.put("offline","offline");

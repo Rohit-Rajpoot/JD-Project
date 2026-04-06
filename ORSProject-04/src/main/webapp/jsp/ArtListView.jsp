@@ -92,7 +92,7 @@
                     <td style="text-align: center; text-transform: capitalize;"><%=bean.getDate()%></td>
                                        <td style="text-align: center; text-transform: capitalize;"><%=bean.getPrice()%></td>
                                                
-                    <td style="text-align: center;"><a href="ArtcastCtl?id=<%=bean.getId()%>">Edit</a></td>
+                    <td style="text-align: center;"><a href="ArtCtl?id=<%=bean.getId()%>">Edit</a></td>
                 </tr>
                 <%
                     }

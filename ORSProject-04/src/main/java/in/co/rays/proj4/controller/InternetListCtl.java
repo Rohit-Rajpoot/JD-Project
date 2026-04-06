@@ -46,7 +46,7 @@ public class InternetListCtl extends BaseCtl {
 		bean.setId(DataUtility.getLong(request.getParameter("id")));
 		bean.setName(DataUtility.getString(request.getParameter("name")));
 		bean.setPrice(DataUtility.getInt(request.getParameter("price")));
-		bean.setLimit(DataUtility.getInt(request.getParameter("limit")));
+		bean.setRange(DataUtility.getInt(request.getParameter("range")));
 		
 
 		populateDTO(bean, request);

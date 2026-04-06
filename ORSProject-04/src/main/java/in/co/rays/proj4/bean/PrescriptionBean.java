@@ -4,7 +4,8 @@ public class PrescriptionBean  extends BaseBean{
 	
 	private String code;
 	private String name;
-	private String  medicines;
+	private String medicines;
+	private String status;
 	
 	public String getCode() {
 		return code;
@@ -30,7 +31,7 @@ public class PrescriptionBean  extends BaseBean{
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	private String status;
+
 	@Override
 	public String getKey() {
 		// TODO Auto-generated method stub

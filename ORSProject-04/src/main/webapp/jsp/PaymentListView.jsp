@@ -53,7 +53,7 @@
             <table style="width: 100%">
                 <tr>
                     <td align="center">
-                   <label><b> name :</b></label>
+                   <label><b> Name :</b></label>
 						<input type="text" name=payerName placeholder="Enter  name" value="<%=ServletUtility.getParameter("payerName", request)%>">&emsp;
 					 
                           

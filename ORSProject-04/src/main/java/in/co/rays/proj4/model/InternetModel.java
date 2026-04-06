@@ -55,7 +55,7 @@ public class InternetModel {
 			pstmt.setInt(1, pk);
 			pstmt.setString(2, bean.getName());
 			pstmt.setDouble(3, bean.getPrice());
-			pstmt.setInt(4,bean.getLimit());
+			pstmt.setInt(4,bean.getRange());
 			
 			pstmt.setString(5, bean.getCreatedBy());
 			pstmt.setString(6, bean.getModifiedBy());
@@ -117,21 +117,21 @@ public class InternetModel {
 	//update*****************--------------------------------
 	
 	public void update(InternetBean bean) throws SQLException, ApplicationException, DuplicateRecordException {
-		Connection conn=null;
+		Connection conn = null;
 		
 		InternetBean duplicate = findByName(bean.getName()); // Check if updated Role
 		  if (duplicate != null && duplicate.getId() !=bean.getId()) { 
-			  throw new DuplicateRecordException("Role already exists");
+			  throw new DuplicateRecordException("Name already exists");
 			  }
 		 
 		try {
 			
 			conn=JDBCDataSource.getConnection();
 			conn.setAutoCommit(false);
-			PreparedStatement pstmt=conn.prepareStatement("update st_internet set name=? , price=?, limit=?,created_by=?,modified_by=?,created_datetime=?,modified_datetime=? where id=?");
+			PreparedStatement pstmt=conn.prepareStatement("update st_internet set name=? , price=?, `range`=?,created_by=?,modified_by=?,created_datetime=?,modified_datetime=? where id=?");
 			pstmt.setString(1, bean.getName());
 			pstmt.setDouble(2, bean.getPrice());
-			pstmt.setInt(3,bean.getLimit());
+			pstmt.setInt(3,bean.getRange());
 			
 			pstmt.setString(4, bean.getCreatedBy());
 			pstmt.setString(5, bean.getModifiedBy());
@@ -144,18 +144,15 @@ public class InternetModel {
 			pstmt.close();
 		}
 		catch(Exception e) {
+			e.printStackTrace();
 			try {
 			conn.rollback();
 			}
 			catch(Exception ex) {
 				throw new ApplicationException("Exception : Delete rollback exception " + ex.getMessage());
-
-			}
-			
-			throw new ApplicationException("Exception in updating Role ");
-
-
-		}
+				}
+				throw new ApplicationException("Exception in updating Role " + e);
+      		}
 		
 		finally {
 			JDBCDataSource.closeConnection(conn);
@@ -176,7 +173,7 @@ public class InternetModel {
 		bean.setId(rs.getLong(1));
 		bean.setName(rs.getString(2));
 		bean.setPrice(rs.getInt(3));
-		bean.setLimit(rs.getInt(4));
+		bean.setRange(rs.getInt(4));
 		
 		bean.setCreatedBy(rs.getString(5));
 		bean.setModifiedBy(rs.getString(6));
@@ -209,7 +206,7 @@ public class InternetModel {
 				bean.setId(rs.getLong(1));
 				bean.setName(rs.getString(2));
 				bean.setPrice(rs.getInt(3));
-				bean.setLimit(rs.getInt(4));
+				bean.setRange(rs.getInt(4));
 				
 				bean.setCreatedBy(rs.getString(5));
 				bean.setModifiedBy(rs.getString(6));
@@ -231,9 +228,9 @@ public class InternetModel {
 		
 	}
 	//find by filter without pagination ***************-----------------------------------
-	public List search(InternetBean bean) {
+	public List list(InternetBean bean) throws ApplicationException {
 		
-		return search(bean);
+		return search(bean,0,0);
 	}
 	
 	
@@ -252,8 +249,8 @@ public class InternetModel {
 			if (bean.getPrice() > 0) {
 				sql.append(" AND price = " + bean.getPrice());
 			}
-			if (bean.getLimit() > 0) {
-				sql.append(" AND limit = " + bean.getLimit());
+			if (bean.getRange() > 0) {
+				sql.append(" AND `range` = " + bean.getRange());
 			}
 		}
 
@@ -274,7 +271,7 @@ public class InternetModel {
 				bean.setId(rs.getLong(1));
 				bean.setName(rs.getString(2));
 				bean.setPrice(rs.getInt(3));
-				bean.setLimit(rs.getInt(4));
+				bean.setRange(rs.getInt(4));
 				
 				bean.setCreatedBy(rs.getString(5));
 				bean.setModifiedBy(rs.getString(6));
@@ -323,7 +320,7 @@ public class InternetModel {
 				bean.setId(rs.getLong(1));
 				bean.setName(rs.getString(2));
 				bean.setPrice(rs.getInt(3));
-				bean.setLimit(rs.getInt(4));
+				bean.setRange(rs.getInt(4));
 				
 				bean.setCreatedBy(rs.getString(5));
 				bean.setModifiedBy(rs.getString(6));

@@ -72,9 +72,8 @@
                    
                     <th width="25%">Name</th>
                     <th width="15%">Price</th>
-                    <th width="10%">Limit</th>
-                    
-                      <th width="10%">Edit</th>
+                    <th width="10%">Range</th>
+                    <th width="10%">Edit</th>
                 </tr>
 
                 <%
@@ -90,9 +89,9 @@
                     
                     <td style="text-align: center; text-transform: capitalize;"><%=bean.getName()%></td>
                     <td style="text-align: center; text-transform: capitalize;"><%=bean.getPrice()%></td>
-                    <td style="text-align: center; text-transform: capitalize;"><%=bean.getLimit()%></td>
+                    <td style="text-align: center; text-transform: capitalize;"><%=bean.getRange()%></td>
                            
-                    <td style="text-align: center;"><a href="BroadcastCtl?id=<%=bean.getId()%>">Edit</a></td>
+                    <td style="text-align: center;"><a href="InternetCtl?id=<%=bean.getId()%>">Edit</a></td>
                 </tr>
                 <%
                     }

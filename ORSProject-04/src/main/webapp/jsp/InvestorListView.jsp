@@ -55,9 +55,8 @@
                    <label><b> Name :</b></label>
                    <input type="text" name="investorName" placeholder="Enter  name" value="<%=ServletUtility.getParameter("investorName", request)%>">&emsp;
                    
-                   <label><b> Type :</b></label>
-                   <input type="text" name="investorType" placeholder="Enter  name" value="<%=ServletUtility.getParameter("investorType", request)%>">&emsp;
-					
+                   <label><b> Type :</b></label><%-- <%=HTMLUtility.getList("investorType", String.valueOf(bean.getInvestmentType()), investList) %> --%>
+                   <input type="text" name="investorType" placeholder="Enter  name" value="<%=ServletUtility.getParameter("investorType", request)%>">&emsp;					
                         <input type="submit" name="operation" value="<%=InvestorListCtl.OP_SEARCH%>">&nbsp;
                         <input type="submit" name="operation" value="<%=InvestorListCtl.OP_RESET%>">
                     </td>

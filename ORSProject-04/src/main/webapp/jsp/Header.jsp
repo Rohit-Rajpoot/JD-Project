@@ -108,10 +108,6 @@
 	<b>|</b>
 	<a href="<%=ORSView.LOGIN_CTL + "?operation=Logout"%>"><b>Logout</b></a>
 	<b>|</b>
-	<a href="<%=ORSView.PAYMENT_CTL%>"><b>Add Payment</b></a>
-	<b>|</b>
-	<a href="<%=ORSView.PAYMENT_LIST_CTL%>"><b>Payment List</b></a>
-	<b>|</b>
 	<a href="<%=ORSView.ART_CTL%>"><b>Add Art</b></a>
 	<b>|</b>
 	<a href="<%=ORSView.ART_LIST_CTL%>"><b>Art List</b></a>
@@ -131,6 +127,10 @@
 	<a href="<%=ORSView.INVESTOR_CTL%>"><b>Add Investor</b></a>
 	<b>|</b>
 	<a href="<%=ORSView.INVESTOR_LIST_CTL%>"><b>Investor List</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.PAYMENT_CTL%>"><b>Add Payment</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.PAYMENT_LIST_CTL%>"><b>Payment List</b></a>
 	<b>|</b>
 	
 	<%

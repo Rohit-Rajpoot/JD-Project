@@ -1,4 +1,5 @@
 
+<%@page import="java.util.LinkedHashMap"%>
 <%@page import="in.co.rays.proj4.controller.InvestorListCtl"%>
 <%@page import="in.co.rays.proj4.bean.InvestorBean"%>
 <%@page import="in.co.rays.proj4.controller.ORSView"%>
@@ -56,7 +57,13 @@
                    <input type="text" name="investorName" placeholder="Enter  name" value="<%=ServletUtility.getParameter("investorName", request)%>">&emsp;
                    
                    <label><b> Type :</b></label><%-- <%=HTMLUtility.getList("investorType", String.valueOf(bean.getInvestmentType()), investList) %> --%>
-                   <input type="text" name="investorType" placeholder="Enter  name" value="<%=ServletUtility.getParameter("investorType", request)%>">&emsp;
+                  <%
+							LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
+							map.put("Offline", "Offline");
+							map.put("Online", "Online");
+
+							String htmlList = HTMLUtility.getList("investmentType", bean.getInvestmentType(), map);
+						%> <%=htmlList%>&emsp;
                    
                     <label><b> Amount :</b></label>
                    <input type="text" name="investmentAmount" placeholder="Enter  name" value="<%=ServletUtility.getParameter("investmentAmount", request)%>">&emsp;

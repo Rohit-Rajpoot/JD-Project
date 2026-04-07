@@ -128,6 +128,10 @@
 	<b>|</b>
 	<a href="<%=ORSView.PRESCRIPTION_LIST_CTL%>"><b>Prescription List</b></a>
 	<b>|</b>
+	<a href="<%=ORSView.INVESTOR_CTL%>"><b>Add Investor</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.INVESTOR_LIST_CTL%>"><b>Investor List</b></a>
+	<b>|</b>
 	
 	<%
 		} else if (user.getRoleId() == RoleBean.STUDENT) {

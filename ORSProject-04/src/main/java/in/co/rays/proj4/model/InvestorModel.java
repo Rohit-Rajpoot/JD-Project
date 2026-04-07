@@ -242,6 +242,9 @@ public class InvestorModel {
 			if (bean.getInvestmentType() != null && bean.getInvestmentType().length() > 0) {
 				sql.append(" AND investment_type like '" + bean.getInvestmentType() + "%'");
 			}
+			if (bean.getInvestmentAmount() > 0) {
+				sql.append(" AND investment_amount = " + bean.getInvestmentAmount());
+			}
 		}
 
 

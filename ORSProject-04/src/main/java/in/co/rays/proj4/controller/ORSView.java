@@ -185,7 +185,11 @@ public interface ORSView {
 	public String INVESTOR_LIST_VIEW = PAGE_FOLDER + "/InvestorListView.jsp";
 	public String INVESTOR_LIST_CTL = APP_CONTEXT + "/ctl/InvestorListCtl";
 	
-	
+	public String EMAIL_VIEW = PAGE_FOLDER + "/EmailView.jsp";
+	public String EMAIL_CTL = APP_CONTEXT + "/ctl/EmailCtl";
+
+	public String EMAIL_LIST_VIEW = PAGE_FOLDER + "/EmailListView.jsp";
+	public String EMAIL_LIST_CTL = APP_CONTEXT + "/ctl/EmailListCtl";
 	
 	
 	

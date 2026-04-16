@@ -8,7 +8,7 @@ import java.util.Date;
  * @author Rohit Rajpoot
  *
  */
-public class ArtBean extends BaseBean {
+public class ArtBean extends BaseBean{
 	private String title;
 	private String name;
 	private Date date;
